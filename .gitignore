@@ -1,0 +1,6 @@
+node_modules
+package-lock.json
+package.json
+.next
+public/.DS_Store
+.DS_Store
