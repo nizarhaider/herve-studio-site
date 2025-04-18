@@ -1,4 +1,4 @@
-import {FiCamera, FiEye, FiFeather, FiLayers, FiLayout, FiLock, FiMove, FiRefreshCw, FiShield, FiSliders, FiUser, FiUsers } from "react-icons/fi";
+import {FiCamera, FiEye, FiFeather, FiLayers, FiLayout, FiMove, FiRefreshCw, FiSliders, FiUsers } from "react-icons/fi";
 
 import { IBenefit } from "@/types"
 
