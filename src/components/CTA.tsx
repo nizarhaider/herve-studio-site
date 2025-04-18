@@ -1,7 +1,7 @@
 import { ctaDetails } from "@/data/cta"
 
-import AppStoreButton from "./AppStoreButton"
-import PlayStoreButton from "./PlayStoreButton"
+// import AppStoreButton from "./AppStoreButton"
+// import PlayStoreButton from "./PlayStoreButton"
 import WhatsAppButton from "./WhatsappButton"
 
 const CTA: React.FC = () => {
