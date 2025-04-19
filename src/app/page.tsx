@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
         </Section>
 
         <Section
-          id="AI Humans Showcase"
+          id="ai-humans"
           title="Check out our AI Humans Showcase"
           description="Get to know them a little better. We promise they won't bite."
         >

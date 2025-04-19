@@ -3,7 +3,7 @@ import { IMenuItem } from "@/types";
 export const menuItems: IMenuItem[] = [
     {
         text: "Models",
-        url: "#features"
+        url: "#ai-humans"
     },
     {
         text: "Pricing",
