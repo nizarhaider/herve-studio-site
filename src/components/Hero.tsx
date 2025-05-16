@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
                         className="z-10"
                     />
                     <p className="absolute text-black -top-0.5 transform md:translate-x-20 md:translate-y-1/4 md:text-xl font-semibold animate-pulse">
-                        Hey, I&apos;m Kavindi 👋
+                        Hey, I&apos;m Ella 👋
                     </p>
                 </div>
             </div>

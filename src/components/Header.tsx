@@ -28,8 +28,8 @@ const Header: React.FC = () => {
                         <Image
                             src={logo}
                             alt="Logo"
-                            width={60}
-                            height={60}
+                            width={50}
+                            height={50}
                             // style={{ objectFit: 'contain' }}
                         />
                         <span className="manrope text-xl font-semibold text-foreground cursor-pointer">

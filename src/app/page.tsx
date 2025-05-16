@@ -31,6 +31,7 @@ const HomePage: React.FC = () => {
         >
           <AIModelsShowcase />
         </Section>
+
         <Section
           id="pricing"
           title="Pricing"
