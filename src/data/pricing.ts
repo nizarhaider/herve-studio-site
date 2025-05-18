@@ -3,9 +3,9 @@ import { IPricing } from "@/types";
 export const tiers: IPricing[] = [
     {
         name: 'Starter',
-        price: 4999,
+        price: 9999,
         features: [
-            'Access to 2 AI humans',
+            'Access to all AI humans',
             'Up to 30 rendered images/month',
             'Basic outfit customization',
             'Email support',
@@ -13,9 +13,9 @@ export const tiers: IPricing[] = [
     },
     {
         name: 'Pro',
-        price: 9999,
+        price: 14999,
         features: [
-            'Access to 8 AI humans',
+            'Create custom AI humans',
             'Up to 100 rendered images/month',
             'Advanced outfit and pose customization',
             'Priority email & chat support',
