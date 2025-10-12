@@ -45,7 +45,7 @@ export const benefits: IBenefit[] = [
                 icon: <FiSliders size={26} />
             }
         ],
-        imageSrc: "/images/models_v3_optimized/rani.webp"
+        imageSrc: "/images/models_v3_optimized/priya.webp"
     },    
     {
         title: "Dynamic Posing",

@@ -6,7 +6,7 @@ import { IStats } from "@/types";
 
 export const stats: IStats[] = [
     {
-        title: "15+",
+        title: "50+",
         icon: <IoMdPerson size={34} className="text-pink-500" />,
         description: "Ai Humans curated for your fashion brand needs, ensuring a perfect fit for your vision."
     },
@@ -16,7 +16,7 @@ export const stats: IStats[] = [
         description: "Perfect ratings from leading fashion brands, showcasing our exceptional results."
     },
     {
-        title: "500+ ",
+        title: "TBD+ ",
         icon: <PiGlobeFill size={34} className="text-blue-600" />,
         description: "Global fashion brands using our AI models to revolutionize the industry."
     }

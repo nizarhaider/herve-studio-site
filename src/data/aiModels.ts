@@ -14,9 +14,9 @@ export const aiModels = [
         image: '/images/models_v3_optimized/anu.webp',
     },
     {
-        name: 'Anushka',
+        name: 'ella',
         description: 'Dance instructor who bakes amazing cookies.',
-        image: '/images/models_v3_optimized/anushka.webp',
+        image: '/images/models_v3_optimized/ella.webp',
     },
     {
         name: 'Anya',
