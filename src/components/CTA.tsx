@@ -1,9 +1,5 @@
 import { ctaDetails } from "@/data/cta"
 
-// import AppStoreButton from "./AppStoreButton"
-// import PlayStoreButton from "./PlayStoreButton"
-import WhatsAppButton from "./WhatsappButton"
-
 const CTA: React.FC = () => {
     return (
         <section id="cta" className="mt-10 mb-5 lg:my-20">
