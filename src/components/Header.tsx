@@ -47,8 +47,8 @@ const Header: React.FC = () => {
                             </li>
                         ))}
                         <li>
-                            <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
-                                Get in Touch
+                            <Link href="https://app.hervestudio.lk" className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
+                                Try Now
                             </Link>
                         </li>
                     </ul>
