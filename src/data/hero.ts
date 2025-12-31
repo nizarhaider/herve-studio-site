@@ -1,5 +1,5 @@
 export const heroDetails = {
-    heading: 'AI Humans for Modern Fashion Brands',
-    subheading: 'Showcase your clothing collections with hyper-realistic, customizable Sri Lankan AI models designed to elevate your brand’s visual identity.',
+    heading: 'Elevate Your Fashion Brand with AI Models',
+    subheading: 'Generate stunning, hyper-realistic fashion photos with customizable AI models. Reduce costs, speed up your launch, and boost conversions.',
     centerImageSrc: '/images/hero_model.png',
 }

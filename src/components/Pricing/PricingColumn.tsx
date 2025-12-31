@@ -12,27 +12,29 @@ const PricingColumn: React.FC<Props> = ({ tier, highlight }: Props) => {
     const { name, price, features } = tier;
 
     return (
-        <div className={clsx("w-full max-w-sm mx-auto bg-white rounded-xl border border-gray-200 lg:max-w-full", { "shadow-lg": highlight })}>
-            <div className="p-6 border-b border-gray-200 rounded-t-xl">
-                <h3 className="text-2xl font-semibold mb-4">{name}</h3>
-                <p className="text-3xl md:text-5xl font-bold mb-6">
-                    <span className={clsx({ "text-secondary": highlight })}>
-                        {typeof price === 'number' ? `${price} LKR` : price}
+        <div className={clsx("w-full max-w-sm mx-auto bg-white rounded-3xl border border-gray-100 lg:max-w-full transition-all duration-300", { "shadow-2xl scale-105 z-10 border-primary-accent/20": highlight, "hover:shadow-xl": !highlight })}>
+            <div className="p-8 border-b border-gray-50">
+                <h3 className="text-2xl font-bold mb-4">{name}</h3>
+                <div className="mb-8">
+                    <span className={clsx("text-4xl md:text-5xl font-extrabold tracking-tight", { "text-primary-accent": highlight })}>
+                        {typeof price === 'number' ? `${price.toLocaleString()} LKR` : price}
                     </span>
-                    {typeof price === 'number' && <span className="text-lg font-normal text-gray-600">/mo</span>}
-                </p>
-                <button className={clsx("w-full py-3 px-4 rounded-full transition-colors", { "bg-primary hover:bg-primary-accent": highlight, "bg-hero-background hover:bg-gray-200": !highlight })}>
+                    {typeof price === 'number' && <span className="text-lg font-medium text-secondary ml-2">/month</span>}
+                </div>
+                <button className={clsx("w-full py-4 px-6 rounded-full font-bold transition-all duration-300 shadow-lg", { 
+                    "bg-primary-accent text-white hover:bg-primary-accent/90 hover:shadow-primary-accent/20": highlight, 
+                    "bg-gray-100 text-foreground hover:bg-gray-200": !highlight 
+                })}>
                     Get Started
                 </button>
             </div>
-            <div className="p-6 mt-1">
-                <p className="font-bold mb-0">FEATURES</p>
-                <p className="text-foreground-accent mb-5">Everything in basic, plus...</p>
-                <ul className="space-y-4 mb-8">
+            <div className="p-8">
+                <p className="font-bold text-sm uppercase tracking-wider text-secondary mb-6">What&apos;s included:</p>
+                <ul className="space-y-4">
                     {features.map((feature, index) => (
-                        <li key={index} className="flex items-center">
-                            <BsFillCheckCircleFill className="h-5 w-5 text-secondary mr-2" />
-                            <span className="text-foreground-accent">{feature}</span>
+                        <li key={index} className="flex items-start">
+                            <BsFillCheckCircleFill className={clsx("h-5 w-5 mr-3 mt-1 flex-shrink-0", { "text-primary-accent": highlight, "text-gray-400": !highlight })} />
+                            <span className="text-foreground/80 leading-snug">{feature}</span>
                         </li>
                     ))}
                 </ul>

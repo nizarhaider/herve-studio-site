@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
 import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
 import logo from '../../public/images/logo_resized.png';
@@ -10,62 +10,82 @@ import Image from 'next/image';
 import Container from './Container';
 import { siteDetails } from '@/data/siteDetails';
 import { menuItems } from '@/data/menuItems';
+import clsx from 'clsx';
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
     return (
-        <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
-            <Container className="!px-0">
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
+        <header 
+            className={clsx(
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+                scrolled ? "bg-white/80 backdrop-blur-md shadow-sm py-2" : "bg-transparent py-4"
+            )}
+        >
+            <Container>
+                <nav className="flex justify-between items-center">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2">
-                        {/* <FaFingerprint className="text-foreground min-w-fit w-7 h-7" /> */}
+                    <Link href="/" className="flex items-center gap-3 group">
                         <Image
                             src={logo}
                             alt="Logo"
-                            width={50}
-                            height={50}
-                            // style={{ objectFit: 'contain' }}
+                            width={40}
+                            height={40}
+                            className="transition-transform duration-300 group-hover:scale-110"
                         />
-                        <span className="manrope text-xl font-semibold text-foreground cursor-pointer">
+                        <span className="manrope text-2xl font-extrabold text-foreground tracking-tight">
                             {siteDetails.siteName}
                         </span>
                     </Link>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex space-x-6">
+                    <ul className="hidden md:flex items-center space-x-10">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-foreground-accent transition-colors">
+                                <Link 
+                                    href={item.url} 
+                                    className="text-lg font-medium text-foreground hover:text-primary-accent transition-colors duration-200"
+                                >
                                     {item.text}
                                 </Link>
                             </li>
                         ))}
                         <li>
-                            <Link href="https://app.hervestudio.lk" className="text-black bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors">
+                            <Link 
+                                href="https://app.hervestudio.lk" 
+                                className="px-8 py-3 text-lg font-bold text-white bg-primary-accent rounded-full hover:bg-primary-accent/90 transition-all duration-300 shadow-md hover:shadow-primary-accent/20"
+                            >
                                 Try Now
                             </Link>
                         </li>
                     </ul>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
+                    <div className="md:hidden">
                         <button
                             onClick={toggleMenu}
                             type="button"
-                            className="bg-primary text-black focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
+                            className="text-foreground focus:outline-none p-2 rounded-xl bg-gray-50"
                             aria-controls="mobile-menu"
                             aria-expanded={isOpen}
                         >
                             {isOpen ? (
-                                <HiOutlineXMark className="h-6 w-6" aria-hidden="true" />
+                                <HiOutlineXMark className="h-8 w-8" aria-hidden="true" />
                             ) : (
-                                <HiBars3 className="h-6 w-6" aria-hidden="true" />
+                                <HiBars3 className="h-8 w-8" aria-hidden="true" />
                             )}
                             <span className="sr-only">Toggle navigation</span>
                         </button>
@@ -77,24 +97,32 @@ const Header: React.FC = () => {
             <Transition
                 show={isOpen}
                 enter="transition ease-out duration-200 transform"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="transition ease-in duration-75 transform"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
+                enterFrom="opacity-0 -translate-y-10"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition ease-in duration-150 transform"
+                leaveFrom="opacity-100 translate-y-0"
+                leaveTo="opacity-0 -translate-y-10"
             >
-                <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
-                    <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
+                <div id="mobile-menu" className="md:hidden absolute top-full left-0 right-0 bg-white shadow-2xl border-t border-gray-50 overflow-hidden">
+                    <ul className="flex flex-col space-y-2 p-6">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-primary block" onClick={toggleMenu}>
+                                <Link 
+                                    href={item.url} 
+                                    className="text-xl font-semibold text-foreground hover:text-primary-accent block py-3 px-4 rounded-xl hover:bg-gray-50 transition-all"
+                                    onClick={toggleMenu}
+                                >
                                     {item.text}
                                 </Link>
                             </li>
                         ))}
-                        <li>
-                            <Link href="#cta" className="text-black bg-primary hover:bg-primary-accent px-5 py-2 rounded-full block w-fit" onClick={toggleMenu}>
-                                Get Started
+                        <li className="pt-4">
+                            <Link 
+                                href="https://app.hervestudio.lk" 
+                                className="w-full text-center px-8 py-4 text-xl font-bold text-white bg-primary-accent rounded-xl block shadow-lg"
+                                onClick={toggleMenu}
+                            >
+                                Try Now
                             </Link>
                         </li>
                     </ul>
@@ -105,3 +133,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+

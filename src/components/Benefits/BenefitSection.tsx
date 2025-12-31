@@ -50,52 +50,66 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
     const { title, description, imageSrc, bullets } = benefit;
 
     return (
-        <section className="benefit-section">
+        <section className="benefit-section py-16 lg:py-24">
             <motion.div
-                className="flex flex-wrap flex-col items-center justify-center gap-2 lg:flex-row lg:gap-20 lg:flex-nowrap mb-24"
+                className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20"
                 variants={containerVariants}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true }}
             >
                 <div
-                    className={clsx("flex flex-wrap items-center w-full max-w-lg", { "justify-start": imageAtRight, "lg:order-1 justify-end": !imageAtRight })}
-                    
+                    className={clsx("w-full lg:w-1/2 max-w-2xl", { "lg:order-2": imageAtRight })}
                 >
-                    <div className="w-full  text-center lg:text-left ">
+                    <div className="text-center lg:text-left">
                         <motion.div
                             className="flex flex-col w-full"
                             variants={childVariants}
                         >
                             <SectionTitle>
-                                <h3 className="lg:max-w-2xl">
+                                <h3 className="mb-6">
                                     {title}
                                 </h3>
                             </SectionTitle>
 
-                            <p className="mt-1.5 mx-auto lg:ml-0 leading-normal text-foreground-accent">
+                            <p className="text-lg text-secondary leading-relaxed mb-8">
                                 {description}
                             </p>
                         </motion.div>
 
-                        <div className="mx-auto lg:ml-0 w-full">
+                        <div className="space-y-6">
                             {bullets.map((item, index) => (
                                 <BenefitBullet key={index} title={item.title} icon={item.icon} description={item.description} />
                             ))}
                         </div>
+
+                        <motion.div variants={childVariants} className="mt-10">
+                            <a 
+                                href="#" 
+                                className="inline-flex items-center text-primary-accent font-bold text-lg hover:underline transition-all duration-300"
+                            >
+                                Learn more 
+                                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </motion.div>
                     </div>
                 </div>
 
-                <div className={clsx("mt-5 lg:mt-0", { "lg:order-2": imageAtRight })}>
-                    <div className={clsx("w-fit flex", { "justify-start": imageAtRight, "justify-end": !imageAtRight })}>
-                        <Image
-                            src={imageSrc}
-                            alt="title"
-                            width={400}  // Increased image width
-                            height={1000}  // Increased image height
-                            quality={100}
-                            className="lg:ml-0"
-                        />
+                <div className={clsx("w-full lg:w-1/2 flex justify-center", { "lg:order-1": imageAtRight })}>
+                    <div className="relative group">
+                        <div className="absolute -inset-4 bg-primary-accent/5 rounded-3xl transform rotate-3 transition-transform group-hover:rotate-6 duration-500"></div>
+                        <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                            <Image
+                                src={imageSrc}
+                                alt={title}
+                                width={500}
+                                height={600}
+                                quality={100}
+                                className="object-cover"
+                            />
+                        </div>
                     </div>
                 </div>
             </motion.div>

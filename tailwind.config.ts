@@ -9,14 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
+        background: "var(--color-background)",
+        foreground: "var(--color-foreground)",
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
 
-        "primary-accent": "var(--primary-accent)",
-        "foreground-accent": "var(--foreground-accent)",
-        "hero-background": "var(--hero-background)",
+        // Botika-inspired accent colors
+        "primary-accent": "var(--color-primary-accent)", // Vibrant purple/magenta for CTAs
+        "foreground-accent": "var(--color-foreground-accent)", // Lighter shade for secondary accents
+        "hero-background": "var(--color-hero-background)", // Subtle gradient for hero section
+
       },
     },
   },

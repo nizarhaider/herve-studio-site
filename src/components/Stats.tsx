@@ -2,15 +2,21 @@ import { stats } from "@/data/stats"
 
 const Stats: React.FC = () => {
     return (
-        <section id="stats" className="py-10 lg:py-20">
-            <div className="grid sm:grid-cols-3 gap-8">
+        <section id="stats" className="py-20 lg:py-32 bg-gray-50 rounded-3xl px-8 my-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-20">
                 {stats.map(stat => (
-                    <div key={stat.title} className="text-center sm:text-left max-w-md sm:max-w-full mx-auto">
-                        <h3 className="mb-5 flex items-center gap-2 text-3xl font-semibold justify-center sm:justify-start">
-                            {stat.icon}
-                            {stat.title}
-                        </h3>
-                        <p className="text-foreground-accent">{stat.description}</p>
+                    <div key={stat.title} className="text-center sm:text-left">
+                        <div className="flex items-center justify-center sm:justify-start gap-4 mb-4 text-primary-accent">
+                            <span className="p-3 bg-white rounded-2xl shadow-sm">
+                                {stat.icon}
+                            </span>
+                            <h3 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
+                                {stat.title}
+                            </h3>
+                        </div>
+                        <p className="text-lg text-secondary leading-relaxed max-w-sm mx-auto sm:mx-0">
+                            {stat.description}
+                        </p>
                     </div>
                 ))}
             </div>
