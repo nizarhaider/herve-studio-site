@@ -11,10 +11,10 @@ const CTA: React.FC = () => {
                 </div>
 
                 <div className="relative z-10 max-w-4xl mx-auto">
-                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-black mb-8 leading-tight">
                         {ctaDetails.heading}
                     </h2>
-                    <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-xl text-gray-800 mb-12 max-w-2xl mx-auto leading-relaxed">
                         {ctaDetails.subheading}
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -28,7 +28,7 @@ const CTA: React.FC = () => {
                         </a>
                         <a
                             href="mailto:nizarhaider@gmail.com"
-                            className="text-lg font-bold text-white hover:underline underline-offset-8"
+                            className="text-lg font-bold text-black hover:underline underline-offset-8"
                         >
                             Talk to an expert
                         </a>
