@@ -1,37 +1,60 @@
-import { IPricing } from "@/types";
-
-export const tiers: IPricing[] = [
-    {
-        name: 'Starter',
-        price: 9999,
-        features: [
-            'Access to all AI humans',
-            'Up to 30 rendered images/month',
-            'Basic outfit customization',
-            'Email support',
-        ],
-    },
-    {
-        name: 'Pro',
-        price: 14999,
-        features: [
-            'Create custom AI humans',
-            'Up to 100 rendered images/month',
-            'Advanced outfit and pose customization',
-            'Priority email & chat support',
-            'High-res exports (4K)',
-        ],
-    },
-    {
-        name: 'Enterprise',
-        price: 'Custom',
-        features: [
-            'Unlimited AI humans access',
-            'Unlimited image renders',
-            'Custom AI human creation (on request)',
-            'Dedicated account manager',
-            'API access & workflow integration',
-            '24/7 support & consulting',
-        ],
-    },
+export const tiers = [
+  {
+    name: "Free Plan",
+    slug: "free",
+    description: "Perfect for trying out our service",
+    price: 0,
+    credits: 15,
+    features: [
+      "15 generations per month",
+      "Standard quality",
+      "Basic support"
+    ]
+  },
+  {
+    name: "Starter Plan",
+    slug: "starter",
+    description: "Great for individual creators",
+    price: 4999,
+    credits: 50,
+    popular: true,
+    features: [
+      "50 generations per month",
+      "HD upscaling",
+      "Priority processing",
+      "Email support"
+    ]
+  },
+//   {
+//     name: "Pro Plan",
+//     slug: "pro",
+//     description: "Perfect for professionals",
+//     price: 8999,
+//     credits: 100,
+//     features: [
+//       "100 generations per month",
+//       "HD upscaling",
+//       "Priority processing",
+//       "Unlimited upscales",
+//       "Priority support",
+//       "API access"
+//     ]
+//   },
+  {
+    name: "Enterprise Plan",
+    slug: "enterprise",
+    description: "For teams and businesses",
+    price: 19999,
+    credits: 499,
+    features: [
+      "Unlimited generations per month",
+      "HD upscaling",
+      "Priority processing",
+      "Unlimited upscales",
+      "Dedicated support",
+      "API access",
+      "Custom integrations",
+      "SLA guarantee"
+    ]
+  }
 ];

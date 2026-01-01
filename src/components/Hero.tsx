@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
                     <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
                         <a
                             href="#pricing"
-                            className="px-10 py-4 text-lg font-bold text-white bg-primary-accent rounded-full hover:bg-primary-accent/90 transition-all duration-300 shadow-lg hover:shadow-primary-accent/20"
+                            className="px-10 py-4 text-lg font-bold text-black bg-primary-accent rounded-full hover:bg-primary-accent/90 transition-all duration-300 shadow-lg hover:shadow-primary-accent/20"
                         >
                             Try Now
                         </a>
