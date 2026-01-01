@@ -66,7 +66,7 @@ const Header: React.FC = () => {
                         <li>
                             <Link 
                                 href="https://app.hervestudio.lk" 
-                                className="px-8 py-3 text-lg font-bold text-black bg-primary-accent rounded-full hover:bg-primary-accent/90 transition-all duration-300 hover:shadow-primary-accent/20"
+                                className="px-8 py-3 text-lg font-bold text-black rounded-full border border-gray-200 hover:bg-black hover:text-white transition-all duration-300 "
                             >
                                 Try Now
                             </Link>
@@ -119,7 +119,7 @@ const Header: React.FC = () => {
                         <li className="pt-4">
                             <Link 
                                 href="https://app.hervestudio.lk" 
-                                className="w-full text-center px-8 py-4 text-xl font-bold text-black bg-primary-accent rounded-xl block shadow-lg"
+                                className="w-full text-center px-8 py-4 text-xl font-bold text-black bg-primary-accent rounded-xl block shadow-lg hover:bg-black hover:text-white transition-all duration-300"
                                 onClick={toggleMenu}
                             >
                                 Try Now
