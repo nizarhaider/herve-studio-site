@@ -7,7 +7,7 @@ export const footerDetails: {
     telephone: string;
     socials: ISocials;
 } = {
-    subheading: "Empowering fashion brands with cutting-edge AI solutions for design and consumer engagement.",
+    subheading: "Empowering fashion brands with cutting-edge AI solutions for design and consumer engagement. We also manage the SL Chatbot solution",
     quickLinks: [
         {
             text: "Features",
@@ -28,7 +28,7 @@ export const footerDetails: {
         // github: 'https://github.com',
         // x: 'https://twitter.com/x',
         // youtube: 'https://youtube.com',
-        // threads: 'https://www.threads.net',
+        threads: 'https://www.threads.net',
         instagram: 'https://www.instagram.com/hervestudio.lk/',
     }
 }
